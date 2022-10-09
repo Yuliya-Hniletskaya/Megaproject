@@ -13,7 +13,9 @@ class Author(models.Model):
         verbose_name="Date of birth"
     )
     date_of_death = models.DateField(
-        verbose_name="Daye of death"
+        verbose_name="Date of death",
+        blank=True,
+        null=True
     )
     description = models.TextField(
          blank=True,
