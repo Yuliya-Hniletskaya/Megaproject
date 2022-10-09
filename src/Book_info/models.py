@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Authors(models.Model):
+class Author(models.Model):
     name = models.CharField(
         max_length=50,
         verbose_name="Author's name"
@@ -19,8 +19,9 @@ class Authors(models.Model):
          blank=True,
          null=True
     )
-        
-    
+    def __str__(self):
+        return self.name
+
 class Series(models.Model):
     name = models.CharField(
         max_length=50,
@@ -32,6 +33,8 @@ class Series(models.Model):
          blank=True,
          null=True
     )
+    def __str__(self):
+        return self.name
     
 class Genre(models.Model):
     name = models.CharField(
@@ -43,6 +46,10 @@ class Genre(models.Model):
          blank=True,
          null=True
     )
+    def __str__(self):
+        return self.name
+        
+        
         
 class Publisher(models.Model):
     name = models.CharField(
@@ -54,3 +61,5 @@ class Publisher(models.Model):
          blank=True,
          null=True
     )
+    def __str__(self):
+        return self.name
